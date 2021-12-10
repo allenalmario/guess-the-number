@@ -1,1 +1,38 @@
-<h1>Guess The Number</h1>
+<html>
+    <head>
+        <title>Guess The Number</title>
+    </head>
+    <body>
+        <h1>Guess The Number</h1>
+        <h3>This website uses JavaScript's Math random function to pick a random number and users are prompted to guess the number. It utilizes a while loop to keep the prompt going until the user guesses the number right and the user will know how many guesses it took them to guess the correct number!</h3>
+        <script>
+            let num = Math.floor(Math.random() * 11);
+            let gotIt = false;
+            let guesses = 0;
+            let guess = prompt("Guess a number between 1 and 10");
+
+            while(gotIt == false){
+                if(num == guess){
+                    guesses += 1;
+                    gotIt = true;
+                }
+                else if (num < guess){
+                    guess = prompt("You guessed: " + guess + " ... Lower! Please guess again:");
+                    guesses += 1;
+                }
+                else if (num > guess) {
+                    guess = prompt("You guessed: " + guess + " ... higher! Please guess again:");
+                    guesses += 1;
+                }
+                else {
+                    guess = prompt("That was incorrect. Please guess again:");
+                    guesses += 1;
+                }
+            }
+
+            alert("Correct! You guessed the correct number! The number was " + num + " and it took you " + guesses + " guesses!");
+
+            // alert("is this working?")
+        </script>
+    </body>
+</html>
