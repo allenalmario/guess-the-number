@@ -16,6 +16,9 @@
                     guesses += 1;
                     gotIt = true;
                 }
+                else if (guess == ""){
+                    guess = prompt("You didn't type anything! Please guess again:");
+                }
                 else if (num < guess){
                     guess = prompt("You guessed: " + guess + " ... Lower! Please guess again:");
                     guesses += 1;
@@ -24,9 +27,8 @@
                     guess = prompt("You guessed: " + guess + " ... higher! Please guess again:");
                     guesses += 1;
                 }
-                else {
-                    guess = prompt("That was incorrect. Please guess again:");
-                    guesses += 1;
+                else if (typeof guess === 'string'){
+                    guess = prompt("That's not a number! Please guess again:");
                 }
             }
 
